@@ -1,24 +1,19 @@
 # CampFire - React E-Commerce Store
-Refactored version f my old project
+Refactored version of my old project
 
 
 
-- **Modern React Architecture**: Built with React 18 and React Router v6
-- **Responsive Design**: Mobile-first approach with beautiful UI across all devices
-- **Smooth Animations**: Engaging transitions and hover effects
-- **Component-Based**: Reusable components for maintainability
-- **Clean Code**: Well-organized structure with separate concerns
-- **Modern CSS**: CSS variables, gradients, and modern layout techniques
+
 
  📁 Project Structure
 
 ```
 campfire-react/
 ├── public/
-│   ├── Assets/          # All images and static files from original project
+│   ├── Assets/         
 │   └── index.html
 ├── src/
-│   ├── components/      # Reusable components
+│   ├── components/    
 │   │   ├── Header.js
 │   │   ├── Header.css
 │   │   ├── Footer.js
