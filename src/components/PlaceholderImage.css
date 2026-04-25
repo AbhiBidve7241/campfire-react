@@ -1,0 +1,107 @@
+.placeholder-image {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #0a3d6e 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border: 2px dashed var(--border-color);
+}
+
+.placeholder-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 49%, rgba(255,255,255,0.05) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(255,255,255,0.05) 50%, transparent 51%);
+  background-size: 20px 20px;
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  color: white;
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.placeholder-text {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* Hero placeholder variant */
+.placeholder-image.hero-placeholder {
+  border-radius: 0;
+  border: none;
+}
+
+.placeholder-image.hero-placeholder .placeholder-icon {
+  font-size: 4rem;
+}
+
+.placeholder-image.hero-placeholder .placeholder-text {
+  font-size: 1.5rem;
+}
+
+/* Product placeholder variant */
+.placeholder-image.product-placeholder {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #d1d5e8 100%);
+  border: 2px solid var(--border-color);
+}
+
+.placeholder-image.product-placeholder .placeholder-content {
+  color: var(--text-medium);
+}
+
+.placeholder-image.product-placeholder .placeholder-icon {
+  color: var(--primary-color);
+}
+
+/* Small placeholder variant */
+.placeholder-image.small-placeholder {
+  border-radius: 8px;
+}
+
+.placeholder-image.small-placeholder .placeholder-icon {
+  font-size: 1.25rem;
+}
+
+.placeholder-image.small-placeholder .placeholder-text {
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .placeholder-image.hero-placeholder .placeholder-icon {
+    font-size: 3rem;
+  }
+  
+  .placeholder-image.hero-placeholder .placeholder-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .placeholder-image.hero-placeholder .placeholder-icon {
+    font-size: 2rem;
+  }
+  
+  .placeholder-image.hero-placeholder .placeholder-text {
+    font-size: 1rem;
+  }
+}

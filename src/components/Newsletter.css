@@ -1,0 +1,113 @@
+.newsletter {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #0a2f5c 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background:url('../../public/Assets/banner/newsletter.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.newsletter-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-text h3 {
+  color: white;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.newsletter-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  gap: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: white;
+  color: var(--text-dark);
+}
+
+.newsletter-form input::placeholder {
+  color: var(--text-light);
+}
+
+.newsletter-form button {
+  padding: 1.25rem 2.5rem;
+  border-radius: 0;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.newsletter-terms {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .newsletter {
+    padding: 3rem 1.5rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .newsletter-form input {
+    padding: 1rem 1.5rem;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .newsletter-form button {
+    padding: 1rem 2rem;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter {
+    padding: 2.5rem 1rem;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    padding: 0.875rem 1.25rem;
+  }
+}

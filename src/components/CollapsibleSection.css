@@ -1,0 +1,114 @@
+/* Collapsible Section - Mobile Only */
+.collapsible-section {
+  background: white;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.collapsible-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.collapsible-header:active {
+  background: rgba(232, 110, 12, 0.05);
+}
+
+.collapsible-header-text {
+  flex: 1;
+}
+
+.collapsible-header-text h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark, #1f2937);
+  margin: 0;
+}
+
+.collapsible-header-text p {
+  font-size: 0.875rem;
+  color: var(--text-medium, #6b7280);
+  margin: 0.25rem 0 0;
+}
+
+.collapsible-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light, #f3f4f6);
+  border-radius: 50%;
+  color: var(--primary-color, #e86e0c);
+  font-size: 0.875rem;
+  transition: transform 0.3s ease, background 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.collapsible-section.expanded .collapsible-icon {
+  background: var(--primary-color, #e86e0c);
+  color: white;
+  transform: rotate(180deg);
+}
+
+/* Content Animation */
+.collapsible-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.collapsible-section.expanded .collapsible-content {
+  grid-template-rows: 1fr;
+}
+
+.collapsible-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Ensure nested sections keep their styling */
+.collapsible-inner .section {
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.collapsible-inner .section-header {
+  display: none;
+}
+
+.collapsible-inner .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Override for sections with their own backgrounds */
+.collapsible-section .testimonials,
+.collapsible-section .stats,
+.collapsible-section .newsletter,
+.collapsible-section .features-section {
+  border-radius: 0;
+}
+
+/* Ensure services section works */
+.collapsible-section .services {
+  background: transparent;
+}
+
+/* Desktop - No collapsible styles applied */
+@media (min-width: 769px) {
+  .collapsible-section {
+    background: transparent;
+    border-bottom: none;
+  }
+}
+
