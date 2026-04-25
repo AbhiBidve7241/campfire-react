@@ -51,22 +51,25 @@ const Header = () => {
           </button>
           
           <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <Link 
-                  to={item.path}
-                  className={location.pathname === item.path ? 'active' : ''}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-            <li className="cart-item desktop-only">
-              <Link to="/cart">
-                <i className="fa-solid fa-cart-shopping"></i>
-              </Link>
-            </li>
-          </ul>
+  {navItems.map((item) => (
+    <li key={item.path}>
+      <Link
+        to={item.path}
+        className={location.pathname === item.path ? 'active nav-link' : 'nav-link'}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        {item.name}
+      </Link>
+    </li>
+  ))}
+
+  <li className="cart-item">
+    <Link to="/cart" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+      <i className="fa-solid fa-cart-shopping"></i>
+      <span>Cart</span>
+    </Link>
+  </li>
+</ul>
         </nav>
 
         <div className="mobile-actions">
@@ -83,12 +86,7 @@ const Header = () => {
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <div 
-          className="overlay"
-          onClick={toggleMobileMenu}
-        />
-      )}
+      
     </header>
   );
 };
